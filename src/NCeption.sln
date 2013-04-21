@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{61854809-5257-4A96-891D-738BDD4A6876}"
 	ProjectSection(SolutionItems) = preProject
 		..\build\Build.proj = ..\build\Build.proj
@@ -22,8 +22,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4F2401
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Core", "NCeption.Core\NCeption.Core.csproj", "{0FCD8659-5428-46AA-94A1-983EA5D530D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D01C88EB-EF98-4ED3-96CA-FD552DE956BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Tests", "NCeption.Tests\NCeption.Tests.csproj", "{7210C387-C1B5-4553-9463-F390A66CEEDD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FCD8659-5428-46AA-94A1-983EA5D530D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCD8659-5428-46AA-94A1-983EA5D530D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCD8659-5428-46AA-94A1-983EA5D530D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCD8659-5428-46AA-94A1-983EA5D530D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7210C387-C1B5-4553-9463-F390A66CEEDD} = {D01C88EB-EF98-4ED3-96CA-FD552DE956BB}
 	EndGlobalSection
 EndGlobal
