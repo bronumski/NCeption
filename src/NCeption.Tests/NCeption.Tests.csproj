@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TcpPortFixtures\GetNextFreePort\When_getting_next_free_port.cs" />
+    <Compile Include="UriManagerFixtures\When_getting_concistent_uri_for_a_service.cs" />
+    <Compile Include="UriManagerFixtures\When_getting_consistent_uri_for_a_string_key.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -61,6 +63,7 @@
       <Name>NCeption.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
