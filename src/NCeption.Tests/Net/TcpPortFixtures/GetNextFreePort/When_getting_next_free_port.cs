@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace NCeption.TcpPortFixtures.GetNextFreePort
+namespace NCeption.Net.TcpPortFixtures.GetNextFreePort
 {
     [TestFixture]
     class When_getting_next_free_port

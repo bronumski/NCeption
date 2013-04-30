@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 
-namespace NCeption
+namespace NCeption.Net
 {
     public static class TcpPort
     {
