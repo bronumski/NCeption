@@ -37,7 +37,7 @@ namespace NCeption.UriManagerFixtures
         [Test]
         public void Should_return_a_uri_where_the_key_name_is_part_of_the_path()
         {
-            result.AbsolutePath.Should().Be("/Foo");
+            result.AbsolutePath.Should().Be("/");
         }
 
         [Test]

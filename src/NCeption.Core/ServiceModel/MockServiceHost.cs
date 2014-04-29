@@ -3,7 +3,7 @@ using System.ServiceModel;
 
 namespace NCeption.ServiceModel
 {
-    public class MockServiceHost<TMockService> : ServiceHost where TMockService : class
+    public class MockServiceHost<TMockService> : ServiceHost, IStartableService where TMockService : class
     {
         public MockServiceHost(TMockService mock, Uri uri)
             : base(mock, new[] { uri })
@@ -12,5 +12,15 @@ namespace NCeption.ServiceModel
         }
 
         public TMockService ServiceMock { get; private set; }
+
+        void IStartableService.Start()
+        {
+            Open();
+        }
+
+        void IStartableService.Stop()
+        {
+            Close();
+        }
     }
 }

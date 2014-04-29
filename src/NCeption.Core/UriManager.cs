@@ -33,7 +33,7 @@ namespace NCeption
         {
             lock (lockObject)
             {
-                var uriBuilder = new UriBuilder(Uri.UriSchemeHttp, "localhost", TcpPort.GetNextFreePort(), key);
+                var uriBuilder = new UriBuilder(Uri.UriSchemeHttp, "localhost", TcpPort.GetNextFreePort());
 
                 UriStore.Add(key, uriBuilder.Uri);
 
