@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigurationExtensions.cs" />
     <Compile Include="INCeptionConfiguration.cs" />
     <Compile Include="IStartableService.cs" />
     <Compile Include="Mocking\IMockProvider.cs" />
