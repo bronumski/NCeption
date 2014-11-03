@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TinyIoC;
 
@@ -25,6 +26,18 @@ namespace NCeption
             container.Register(instance);
         }
 
+        public static void Start(Type serviceType, string key = null)
+        {
+            if (serviceType.GetInterfaces().Any(x => x == typeof (IStartableService)) == false)
+            {
+                throw new InvalidStartableServiceTypeException(
+                    string.Format("Type '{0}' does not implement '{1}' and cannot be started.", serviceType,
+                        typeof (IStartableService)));
+            }
+
+            Start(() => (IStartableService) container.Resolve(serviceType), key);
+        }
+
         public static void Start<TService>(string key = null) where TService : class, IStartableService
         {
             Start(container.Resolve<TService>, key);
@@ -32,37 +45,63 @@ namespace NCeption
 
         public static void Start<TService>(Func<TService> serviceFactory, string key = null) where TService : IStartableService
         {
-            string serviceKey = key ?? typeof(TService).FullName;
+            Start(() => (IStartableService)serviceFactory(), key);
+        }
 
+        private static void Start(Func<IStartableService> serviceFactory, string key)
+        {
             lock (lockObject)
             {
-                if (runningServices.ContainsKey(serviceKey))
-                {
-                    return;
-                }
-
                 var service = serviceFactory();
+
+                Type serviceType = service.GetType();
+
+                if (IsRunning(serviceType, key)) return;
 
                 service.Start();
 
-                runningServices.Add(serviceKey, service);
+                runningServices.Add(GenerateFullKey(serviceType, key), service);
             }
+        }
+
+        private static bool IsRunning<TServiceType>(string key)
+        {
+            return IsRunning(typeof (TServiceType), key);
+        }
+
+        private static bool IsRunning(Type serviceType, string key)
+        {
+            return runningServices.ContainsKey(GenerateFullKey(serviceType, key));
+        }
+
+        private static string GenerateFullKey<TService>(string key)
+        {
+            return GenerateFullKey(typeof (TService), key);
+        }
+
+        private static string GenerateFullKey(Type serviceType, string key)
+        {
+            return serviceType.FullName + key;
         }
 
         public static void Stop<T>(string key = null)
         {
-            var serviceKey = key ?? typeof (T).FullName;
+            Stop(typeof(T), key);
+        }
+
+        public static void Stop(Type serviceType, string key = null)
+        {
+            var serviceKey = GenerateFullKey(serviceType, key);
 
             lock (lockObject)
             {
-                if (runningServices.ContainsKey(serviceKey))
-                {
-                    var service = runningServices[serviceKey];
+                if (! IsRunning(serviceType, key)) return;
 
-                    Safely.Call(service, x => x.Stop());
+                var service = runningServices[serviceKey];
 
-                    runningServices.Remove(serviceKey);
-                }
+                Safely.Call(service, x => x.Stop());
+
+                runningServices.Remove(serviceKey);
             }
         }
 

@@ -13,7 +13,7 @@ namespace NCeption.ServiceManagerFixtures
 
             ServiceManager.Start<Wibble>();
 
-            FooService.IsRunning.Should().BeTrue();
+            Wibble.IsRunning.Should().BeTrue();
         }
 
         [Test]
@@ -23,10 +23,16 @@ namespace NCeption.ServiceManagerFixtures
 
             ServiceManager.Start<Wibble>();
 
-            FooService.IsRunning.Should().BeTrue();
+            Wibble.IsRunning.Should().BeTrue();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            ServiceManager.Stop<Wibble>();
         }
         
-        class Wibble : FooService
+        class Wibble : StartableService1
         {
             public Wibble(IDependency dependency)
             {

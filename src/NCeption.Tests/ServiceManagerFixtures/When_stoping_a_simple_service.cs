@@ -8,11 +8,11 @@ namespace NCeption.ServiceManagerFixtures
         [Test]
         public void Should_stop_the_service()
         {
-            ServiceManager.Start<FooService>();
+            ServiceManager.Start<StartableService1>();
 
-            ServiceManager.Stop<FooService>();
+            ServiceManager.Stop<StartableService1>();
 
-            FooService.IsRunning.Should().BeFalse();
+            StartableService1.IsRunning.Should().BeFalse();
         }
     }
 }

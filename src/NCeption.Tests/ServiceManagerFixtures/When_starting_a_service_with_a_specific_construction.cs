@@ -8,9 +8,15 @@ namespace NCeption.ServiceManagerFixtures
         [Test]
         public void Should_start_the_service()
         {
-            ServiceManager.Start(() => new FooService());
+            ServiceManager.Start(() => new StartableService1());
 
-            FooService.IsRunning.Should().BeTrue();
+            StartableService1.IsRunning.Should().BeTrue();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            ServiceManager.Stop<StartableService1>();
         }
     }
 }

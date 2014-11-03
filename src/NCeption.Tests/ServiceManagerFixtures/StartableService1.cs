@@ -1,10 +1,10 @@
 ﻿namespace NCeption.ServiceManagerFixtures
 {
-    internal class FooService : IStartableService
+    internal class StartableService1 : IStartableService
     {
         public static bool IsRunning { get; private set; }
 
-        public FooService()
+        public StartableService1()
         {
             IsRunning = false;
         }
@@ -18,6 +18,11 @@
         {
             IsRunning = false;
         }
+    }
+
+    class StartableService2 : StartableService1
+    {
+         
     }
 
     public interface IDependency { }
