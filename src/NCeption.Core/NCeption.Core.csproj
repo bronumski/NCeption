@@ -33,12 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Logging">
-      <HintPath>..\packages\Common.Logging.2.2.0\lib\net40\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core">
-      <HintPath>..\packages\Common.Logging.Core.2.2.0\lib\net40\Common.Logging.Core.dll</HintPath>
-    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
     </Reference>
@@ -67,6 +61,7 @@
     <Compile Include="ServiceModel\MockServiceHost.cs" />
     <Compile Include="ServiceModel\MockServiceHostFactory.cs" />
     <Compile Include="ServiceManager.cs" />
+    <Compile Include="TinyIoC.cs" />
     <Compile Include="UriManager.cs" />
   </ItemGroup>
   <ItemGroup>

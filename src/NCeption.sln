@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{61854809-5257-4A96-891D-738BDD4A6876}"
 	ProjectSection(SolutionItems) = preProject
 		..\build\Build.proj = ..\build\Build.proj
@@ -36,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4TestProject", "TestProj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.CassiniDev", "NCeption.CassiniDev\NCeption.CassiniDev.csproj", "{6A9BD6FC-904E-4581-8D95-C5E786B9700C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.NUnit", "NCeption.NUnit\NCeption.NUnit.csproj", "{810FB899-4222-45B5-B397-B898D677CD45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +66,10 @@ Global
 		{6A9BD6FC-904E-4581-8D95-C5E786B9700C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A9BD6FC-904E-4581-8D95-C5E786B9700C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A9BD6FC-904E-4581-8D95-C5E786B9700C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810FB899-4222-45B5-B397-B898D677CD45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810FB899-4222-45B5-B397-B898D677CD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810FB899-4222-45B5-B397-B898D677CD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810FB899-4222-45B5-B397-B898D677CD45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

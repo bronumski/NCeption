@@ -38,7 +38,7 @@ namespace NCeption
             Safely.Dispose(cassiniDevServer);
         }
 
-        protected abstract void UpdateWebConfig(Configuration webConfig);
+        protected abstract void UpdateWebConfig(System.Configuration.Configuration webConfig);
 
         protected virtual void SaveWebConfig(string webConfigFileName)
         {

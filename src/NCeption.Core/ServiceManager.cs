@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TinyIoC;
 
 namespace NCeption
 {
@@ -8,10 +9,25 @@ namespace NCeption
     {
         private static readonly object lockObject = new object();
         private static readonly IDictionary<string, IStartableService> runningServices = new Dictionary<string, IStartableService>();
+        private static readonly TinyIoCContainer container;
 
-        public static void Start<TService>(string key = null) where TService : IStartableService, new()
+        static ServiceManager()
         {
-            Start(() => new TService(), key);
+            container = new TinyIoCContainer();
+        }
+
+        public static void RegisterType<TService, TImplementation>() where TImplementation : class
+        {
+            container.Register(typeof (TService), typeof (TImplementation));
+        }
+        public static void RegisterInstance<TComponent>(TComponent instance) where TComponent : class
+        {
+            container.Register(instance);
+        }
+
+        public static void Start<TService>(string key = null) where TService : class, IStartableService
+        {
+            Start(container.Resolve<TService>, key);
         }
 
         public static void Start<TService>(Func<TService> serviceFactory, string key = null) where TService : IStartableService

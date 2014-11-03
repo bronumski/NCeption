@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Common.Logging;
 
 namespace NCeption
 {
     public static class Safely
     {
-        private static ILog logger = LogManager.GetLogger(typeof(Safely));
-
-        public static void Dispose(IDisposable disposable)
+        public static void Dispose(IDisposable objectToDispose)
         {
-             Call(disposable, d => d.Dispose());
+             Call(objectToDispose, disposable => disposable.Dispose());
+        }
+
+        public static void Shutdown(IStartableService serviceToShutdown)
+        {
+            Call(serviceToShutdown, startable => startable.Stop());
         }
 
         public static void Call<T>(T obj, Expression<Action<T>> action)
@@ -21,19 +23,19 @@ namespace NCeption
             }
             catch (Exception ex)
             {
-                logger.Warn(string.Format("Failed to call '{0}'", action.Body), ex);
+                Console.Error.WriteLine("Failed to call '{0}' on object of type '{1}'\n{2}", action.Body, obj.GetType(), ex);
             }
         }
 
-        public static void Call(Expression<Action> action)
+        public static void Call(Action action)
         {
             try
             {
-                action.Compile()();
+                action();
             }
             catch (Exception ex)
             {
-                logger.Warn(string.Format("Failed to call '{0}'", action.Body), ex);
+                Console.Error.WriteLine("Failed to call action\n{0}", ex);
             }
         }
     }
