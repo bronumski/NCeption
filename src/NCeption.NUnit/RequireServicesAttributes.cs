@@ -24,6 +24,6 @@ namespace NCeption.NUnit
             Parallel.ForEach(services, service => ServiceManager.Stop(service));
         }
 
-        public ActionTargets Targets { get; private set; }
+        public ActionTargets Targets { get { return ActionTargets.Default; } }
     }
 }

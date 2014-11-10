@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.CassiniDev", "NCep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.NUnit", "NCeption.NUnit\NCeption.NUnit.csproj", "{810FB899-4222-45B5-B397-B898D677CD45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Nancy", "NCeption.Nancy\NCeption.Nancy.csproj", "{F19723D0-F36B-4DFD-9CD3-9A168F67C106}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{810FB899-4222-45B5-B397-B898D677CD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810FB899-4222-45B5-B397-B898D677CD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810FB899-4222-45B5-B397-B898D677CD45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
