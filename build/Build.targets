@@ -56,7 +56,7 @@
 
 	<Target Name="Build" DependsOnTargets="Version">
 
-		<MSBuild  Projects="$(SourceFolder)\$(SolutionFileName)"
+		<MSBuild Projects="$(SourceFolder)\$(SolutionFileName)"
 				 Targets="Clean;Rebuild"
 				 Properties="Configuration=Release;Architecture=Any" />
 

@@ -9,6 +9,10 @@ namespace NCeption.NUnit
     {
         private readonly Type[] services;
 
+        public RequireServicesAttribute()
+        {
+            services = new Type[0];
+        }
         public RequireServicesAttribute(params Type[] services)
         {
             this.services = services;
