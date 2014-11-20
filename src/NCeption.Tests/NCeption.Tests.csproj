@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Nancy\When_starting_nancy_module.cs" />
+    <Compile Include="NUnit\RequiresHttpClientAttributeFixtures\When_depending_on_a_http_client.cs" />
     <Compile Include="NUnit\RequiresServiceAttributeFixtures\When_running_a_test_fixture_that_requires_multiple_services.cs" />
     <Compile Include="NUnit\RequiresServiceAttributeFixtures\When_running_a_test_that_requires_a_service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,6 +13,7 @@ namespace NCeption.NUnit
         {
             services = new Type[0];
         }
+
         public RequireServicesAttribute(params Type[] services)
         {
             this.services = services;

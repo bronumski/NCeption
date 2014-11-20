@@ -10,7 +10,7 @@ namespace NCeption.Nancy
         public void Start()
         {
             var uri = UriManager.GetUriForKey(GetType().ToString());
-            host = new NancyHost(uri, Bootstrapper);
+            host = new NancyHost(Bootstrapper, new HostConfiguration{UrlReservations = new UrlReservations { CreateAutomatically = true }}, uri);
 
             host.Start();
         }
