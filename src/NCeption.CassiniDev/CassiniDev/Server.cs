@@ -74,34 +74,13 @@ namespace CassiniDev
 
         private Timer _timer;
 
-        public Server(int port, string virtualPath, string physicalPath)
-            : this(port, virtualPath, physicalPath, false, false)
-        {
-        }
-
         public Server(int port, string physicalPath)
             : this(port, "/", physicalPath, IPAddress.Loopback)
         {
         }
 
-        public Server(string physicalPath)
-            : this(CassiniNetworkUtils.GetAvailablePort(32768, 65535, IPAddress.Loopback, false), physicalPath)
-        {
-        }
-
-        public Server(int port, string virtualPath, string physicalPath, IPAddress ipAddress, string hostName,
-                      int timeout, bool requireAuthentication)
-            : this(port, virtualPath, physicalPath, ipAddress, hostName, timeout, requireAuthentication, false)
-        {
-        }
-
         public Server(int port, string virtualPath, string physicalPath, bool requireAuthentication)
             : this(port, virtualPath, physicalPath, requireAuthentication, false)
-        {
-        }
-
-        public Server(int port, string virtualPath, string physicalPath, IPAddress ipAddress, string hostName)
-            : this(port, virtualPath, physicalPath, ipAddress, hostName, 0, false, false)
         {
         }
 
@@ -147,79 +126,9 @@ namespace CassiniDev
             ObtainProcessToken();
         }
 
-        public Server(string physicalPath, bool requireAuthentication)
-            : this(
-                CassiniNetworkUtils.GetAvailablePort(32768, 65535, IPAddress.Loopback, false), "/", physicalPath,
-                requireAuthentication)
-        {
-        }
-
-        public Server(int port, string virtualPath, string physicalPath, IPAddress ipAddress, string hostName,
-                      int timeout)
-            : this(port, virtualPath, physicalPath, ipAddress, hostName, timeout, false, false)
-        {
-        }
-
-        public bool DisableDirectoryListing
-        {
-            get { return _disableDirectoryListing; }
-        }
-
-        public bool RequireAuthentication
-        {
-            get { return _requireAuthentication; }
-        }
-
-        public int TimeoutInterval
-        {
-            get { return _timeoutInterval; }
-        }
-
-        public string HostName
-        {
-            get { return _hostName; }
-        }
-
-        public IPAddress IPAddress
-        {
-            get { return _ipAddress; }
-        }
-
         public string PhysicalPath
         {
             get { return _physicalPath; }
-        }
-
-        public int Port
-        {
-            get { return _port; }
-        }
-
-        public string RootUrl
-        {
-            get
-            {
-                string hostname = _hostName;
-                if (string.IsNullOrEmpty(_hostName))
-                {
-                    if (_ipAddress.Equals(IPAddress.Loopback) || _ipAddress.Equals(IPAddress.IPv6Loopback) ||
-                        _ipAddress.Equals(IPAddress.Any) || _ipAddress.Equals(IPAddress.IPv6Any))
-                    {
-                        hostname = "localhost";
-                    }
-                    else
-                    {
-                        hostname = _ipAddress.ToString();
-                    }
-                }
-
-                return _port != 80
-                           ?
-                               String.Format("http://{0}:{1}{2}", hostname, _port, _virtualPath)
-                           :
-                    //FIX: #12017 - TODO:TEST
-                       string.Format("http://{0}{1}", hostname, _virtualPath);
-            }
         }
 
         public string VirtualPath

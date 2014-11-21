@@ -38,10 +38,6 @@ namespace CassiniDev
     /// </summary>  
     internal class Host : MarshalByRefObject, IRegisteredObject
     {
-        private bool _disableDirectoryListing;
-
-        private string _installPath;
-
         private string _lowerCasedClientScriptPathWithTrailingSlash;
 
         private string _lowerCasedVirtualPath;
@@ -65,16 +61,6 @@ namespace CassiniDev
         public Host()
         {
             HostingEnvironment.RegisterObject(this);
-        }
-
-        public bool DisableDirectoryListing
-        {
-            get { return _disableDirectoryListing; }
-        }
-
-        public string InstallPath
-        {
-            get { return _installPath; }
         }
 
         public string NormalizedClientScriptPath
@@ -136,26 +122,13 @@ namespace CassiniDev
         #endregion
 
         public void Configure(Server server, int port, string virtualPath, string physicalPath,
-                              bool requireAuthentication)
-        {
-            Configure(server, port, virtualPath, physicalPath, requireAuthentication, false);
-        }
-
-        public void Configure(Server server, int port, string virtualPath, string physicalPath)
-        {
-            Configure(server, port, virtualPath, physicalPath, false, false);
-        }
-
-        public void Configure(Server server, int port, string virtualPath, string physicalPath,
                               bool requireAuthentication, bool disableDirectoryListing)
         {
             _server = server;
 
             _port = port;
-            _installPath = null;
             _virtualPath = virtualPath;
             _requireAuthentication = requireAuthentication;
-            _disableDirectoryListing = disableDirectoryListing;
             _lowerCasedVirtualPath = CultureInfo.InvariantCulture.TextInfo.ToLower(_virtualPath);
             _lowerCasedVirtualPathWithTrailingSlash = virtualPath.EndsWith("/", StringComparison.Ordinal)
                                                           ? virtualPath

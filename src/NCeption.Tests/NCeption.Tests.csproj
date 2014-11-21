@@ -76,6 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Web\CassiniDevHosting\When_starting_an_aspnet_web_project.cs" />
+    <Compile Include="Web\IisExpressHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Nancy\When_starting_nancy_module.cs" />
     <Compile Include="NUnit\RequiresHttpClientAttributeFixtures\When_depending_on_a_http_client.cs" />
     <Compile Include="NUnit\RequiresServiceAttributeFixtures\When_running_a_test_fixture_that_requires_multiple_services.cs" />
@@ -101,9 +103,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NCeption.CassiniDev\NCeption.CassiniDev.csproj">
+      <Project>{6A9BD6FC-904E-4581-8D95-C5E786B9700C}</Project>
+      <Name>NCeption.CassiniDev</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NCeption.Core\NCeption.Core.csproj">
       <Project>{0FCD8659-5428-46AA-94A1-983EA5D530D9}</Project>
       <Name>NCeption.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCeption.IisExpress\NCeption.IisExpress.csproj">
+      <Project>{2184AC6D-DA4B-4C19-9D1E-DC822D78E006}</Project>
+      <Name>NCeption.IisExpress</Name>
     </ProjectReference>
     <ProjectReference Include="..\NCeption.Nancy\NCeption.Nancy.csproj">
       <Project>{f19723d0-f36b-4dfd-9cd3-9a168f67c106}</Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{61854809-5257-4A96-891D-738BDD4A6876}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,8 +32,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Tests", "NCeption.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{61EF21C6-6FD2-4EC3-BF02-07146DAE0B4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4TestProject.AcceptanceTests", "TestProjects\Mvc4TestProject.AcceptanceTests\Mvc4TestProject.AcceptanceTests.csproj", "{ED0A87DA-73D7-4AE6-A00B-7A0C9706EF51}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4TestProject", "TestProjects\Mvc4TestProject\Mvc4TestProject.csproj", "{25009C7A-6A57-492E-946C-582F586FC5A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.CassiniDev", "NCeption.CassiniDev\NCeption.CassiniDev.csproj", "{6A9BD6FC-904E-4581-8D95-C5E786B9700C}"
@@ -41,6 +39,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.NUnit", "NCeption.NUnit\NCeption.NUnit.csproj", "{810FB899-4222-45B5-B397-B898D677CD45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Nancy", "NCeption.Nancy\NCeption.Nancy.csproj", "{F19723D0-F36B-4DFD-9CD3-9A168F67C106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.IisExpress", "NCeption.IisExpress\NCeption.IisExpress.csproj", "{2184AC6D-DA4B-4C19-9D1E-DC822D78E006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,10 +56,6 @@ Global
 		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED0A87DA-73D7-4AE6-A00B-7A0C9706EF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED0A87DA-73D7-4AE6-A00B-7A0C9706EF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED0A87DA-73D7-4AE6-A00B-7A0C9706EF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED0A87DA-73D7-4AE6-A00B-7A0C9706EF51}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25009C7A-6A57-492E-946C-582F586FC5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25009C7A-6A57-492E-946C-582F586FC5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25009C7A-6A57-492E-946C-582F586FC5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -76,13 +72,16 @@ Global
 		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F19723D0-F36B-4DFD-9CD3-9A168F67C106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2184AC6D-DA4B-4C19-9D1E-DC822D78E006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2184AC6D-DA4B-4C19-9D1E-DC822D78E006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2184AC6D-DA4B-4C19-9D1E-DC822D78E006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2184AC6D-DA4B-4C19-9D1E-DC822D78E006}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7210C387-C1B5-4553-9463-F390A66CEEDD} = {D01C88EB-EF98-4ED3-96CA-FD552DE956BB}
-		{ED0A87DA-73D7-4AE6-A00B-7A0C9706EF51} = {61EF21C6-6FD2-4EC3-BF02-07146DAE0B4C}
 		{25009C7A-6A57-492E-946C-582F586FC5A2} = {61EF21C6-6FD2-4EC3-BF02-07146DAE0B4C}
 	EndGlobalSection
 EndGlobal

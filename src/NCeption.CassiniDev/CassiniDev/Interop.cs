@@ -55,11 +55,6 @@ namespace CassiniDev
         [DllImport("SECUR32.DLL", CharSet = CharSet.Unicode)]
         public static extern int FreeCredentialsHandle(ref SecHandle phCredential);
 
-        [DllImport("kernel32.dll", EntryPoint = "GetConsoleScreenBufferInfo", SetLastError = true,
-            CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
-        public static extern int GetConsoleScreenBufferInfo(int hConsoleOutput,
-                                                            ref CONSOLE_SCREEN_BUFFER_INFO lpConsoleScreenBufferInfo);
-
         [DllImport("KERNEL32.DLL", SetLastError = true)]
         public static extern IntPtr GetCurrentThread();
 
@@ -79,28 +74,6 @@ namespace CassiniDev
         [DllImport("ADVAPI32.DLL", SetLastError = true)]
         public static extern int RevertToSelf();
 
-        #region Nested type: CONSOLE_SCREEN_BUFFER_INFO
-
-        public struct CONSOLE_SCREEN_BUFFER_INFO
-        {
-            internal COORD dwCursorPosition;
-            internal COORD dwMaximumWindowSize;
-            internal COORD dwSize;
-            internal SMALL_RECT srWindow;
-            internal Int16 wAttributes;
-        }
-
-        #endregion
-
-        #region Nested type: COORD
-
-        public struct COORD
-        {
-            internal Int16 x;
-            internal Int16 y;
-        }
-
-        #endregion
 
         #region Nested type: SecBuffer
 
@@ -139,18 +112,6 @@ namespace CassiniDev
             public IntPtr dwLower;
             public IntPtr dwUpper;
             // ReSharper restore InconsistentNaming
-        }
-
-        #endregion
-
-        #region Nested type: SMALL_RECT
-
-        public struct SMALL_RECT
-        {
-            internal Int16 Bottom;
-            internal Int16 Left;
-            internal Int16 Right;
-            internal Int16 Top;
         }
 
         #endregion

@@ -7,7 +7,7 @@
     <ProjectGuid>{6A9BD6FC-904E-4581-8D95-C5E786B9700C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NCeption</RootNamespace>
+    <RootNamespace>NCeption.Web</RootNamespace>
     <AssemblyName>NCeption.CassiniDev</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -57,9 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CassiniDevWebProcess.cs" />
-    <Compile Include="CassiniDev\CassiniDevServer.cs" />
-    <Compile Include="CassiniDev\CassiniNetworkUtils.cs" />
+    <Compile Include="CassiniDevStartableService.cs" />
     <Compile Include="CassiniDev\Common.cs" />
     <Compile Include="CassiniDev\Connection.cs" />
     <Compile Include="CassiniDev\Host.cs" />

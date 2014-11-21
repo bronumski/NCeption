@@ -15,14 +15,8 @@
 #region
 
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Web.UI;
 
 #endregion
 
@@ -30,54 +24,6 @@ namespace CassiniDev
 {
     internal static class CommonExtensions
     {
-        public static string ConvertToHexView(this byte[] value, int numBytesPerRow)
-        {
-            if (value == null) return null;
-
-            List<string> hexSplit = BitConverter.ToString(value)
-                .Replace('-', ' ')
-                .Trim()
-                .SplitIntoChunks(numBytesPerRow * 3)
-                .ToList();
-
-            int byteAddress = 0;
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < hexSplit.Count; i++)
-            {
-                sb.AppendLine(byteAddress.ToString("X4") + ":\t" + hexSplit[i]);
-                byteAddress += numBytesPerRow;
-            }
-
-            return sb.ToString();
-        }
-
-        public static string GetAspVersion()
-        {
-            string version = null;
-            try
-            {
-                Type type = typeof(Page);
-                Assembly assembly = Assembly.GetAssembly(type);
-
-                object[] customAttributes = assembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), true);
-                if ((customAttributes != null) && (customAttributes.GetLength(0) > 0))
-                {
-                    version = ((AssemblyFileVersionAttribute)customAttributes[0]).Version;
-                }
-                else
-                {
-                    version = assembly.GetName().Version.ToString();
-                }
-            }
-            // ReSharper disable EmptyGeneralCatchClause
-            catch
-            // ReSharper restore EmptyGeneralCatchClause
-            {
-            }
-            return version;
-        }
-
         /// <summary>
         /// CassiniDev FIX: #12506
         /// </summary>
@@ -1653,35 +1599,6 @@ namespace CassiniDev
             return contentType;
         }
 
-        public static T GetValueOrDefault<T>(this IDataRecord row, string fieldName)
-        {
-            int ordinal = row.GetOrdinal(fieldName);
-            return row.GetValueOrDefault<T>(ordinal);
-        }
-
-        public static T GetValueOrDefault<T>(this IDataRecord row, int ordinal)
-        {
-            return (T)(row.IsDBNull(ordinal) ? default(T) : row.GetValue(ordinal));
-        }
-
-        public static byte[] StreamToBytes(this Stream input)
-        {
-            int capacity = input.CanSeek ? (int)input.Length : 0;
-            using (MemoryStream output = new MemoryStream(capacity))
-            {
-                int readLength;
-                byte[] buffer = new byte[4096];
-
-                do
-                {
-                    readLength = input.Read(buffer, 0, buffer.Length);
-                    output.Write(buffer, 0, readLength);
-                } while (readLength != 0);
-
-                return output.ToArray();
-            }
-        }
-
         /// <summary>
         /// CassiniDev FIX: #12506
         /// </summary>
@@ -1709,75 +1626,5 @@ namespace CassiniDev
             Marshal.FreeCoTaskMem(mimeout);
             return mime;
         }
-
-        private static IList<string> SplitIntoChunks(this string text, int chunkSize)
-        {
-            List<string> chunks = new List<string>();
-            int offset = 0;
-            while (offset < text.Length)
-            {
-                int size = Math.Min(chunkSize, text.Length - offset);
-                chunks.Add(text.Substring(offset, size));
-                offset += size;
-            }
-            return chunks;
-        }
-    }
-
-    public enum RunState
-    {
-        Idle = 0,
-        Running
-    }
-
-    public enum PortMode
-    {
-        FirstAvailable = 0,
-        Specific
-    }
-
-    public enum ErrorField
-    {
-        None,
-        ApplicationPath,
-        VirtualPath,
-        HostName,
-        IsAddHost,
-        IPAddress,
-        IPAddressAny,
-        IPAddressLoopBack,
-        Port,
-        PortRangeStart,
-        PortRangeEnd,
-        PortRange
-    }
-
-    public enum IPMode
-    {
-        Loopback = 0,
-        Any,
-        Specific
-    }
-
-    public enum RunMode
-    {
-        Server,
-        Hostsfile
-    }
-
-    internal class CassiniException : Exception
-    {
-        public CassiniException(string message, ErrorField field, Exception innerException)
-            : base(message, innerException)
-        {
-            Field = field;
-        }
-
-        public CassiniException(string message, ErrorField field)
-            : this(message, field, null)
-        {
-        }
-
-        public ErrorField Field { get; set; }
     }
 }

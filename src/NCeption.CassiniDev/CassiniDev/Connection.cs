@@ -207,10 +207,7 @@ namespace CassiniDev
         {
             WriteEntireResponseFromString(100, null, null, true);
         }
-        internal void Write200Continue()
-        {
-            WriteEntireResponseFromString(200, null, string.Empty, true);
-        }
+
         public void WriteBody(byte[] data, int offset, int length)
         {
             try
