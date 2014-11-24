@@ -71,6 +71,7 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -86,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigurationExtensionsFixtures\When_updating_app_settings.cs" />
     <Compile Include="Web\CassiniDevHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Web\IisExpressHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Nancy\When_starting_nancy_module.cs" />
@@ -111,6 +113,9 @@
     <Compile Include="Web\OwinHosting\When_starting_an_aspnet_web_project.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\TestConfig.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,9 +144,7 @@
       <Name>NCeption.Owin</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\ConfigurationExtensionsFixtures\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

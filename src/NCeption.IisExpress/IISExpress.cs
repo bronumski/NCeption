@@ -2,12 +2,13 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace NCeption.Web
 {
     class IISExpress : IDisposable
     {
+        private readonly Process process;
+
         private static class NativeMethods
         {
             // Methods
@@ -45,22 +46,12 @@ namespace NCeption.Web
             }
         }
 
-        const string PATH = "path";
-        const string PORTNUMBER = "port";
-
-        readonly Process process;
-
         IISExpress(string path, int portNumber)
         {
-            var arguments = new StringBuilder();
-            arguments.AppendFormat("/{0}:{1} ", PATH, path);
-
-            arguments.AppendFormat("/{0}:{1} ", PORTNUMBER, portNumber);
-            
             process = Process.Start(new ProcessStartInfo
             {
                 FileName = GetDefaultIisExpressPath(),
-                Arguments = arguments.ToString(),
+                Arguments = string.Format(@"/path:""{0}"" /port:{1}", path, portNumber),
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true

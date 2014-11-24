@@ -11,6 +11,7 @@ namespace NCeption.Web.IisExpressHosting
     class When_starting_an_aspnet_web_project : IRequireHttpClient<When_starting_an_aspnet_web_project.Mvc4TestProject>
     {
         [Test]
+        [Repeat(10)]
         public void Should_deploy_website_and_run_it()
         {
             HttpClient.GetAsync("/Home/Index").Result.StatusCode.Should().Be(HttpStatusCode.OK);
