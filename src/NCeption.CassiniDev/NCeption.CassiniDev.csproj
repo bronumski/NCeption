@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="CassiniDevStartableService.cs" />
     <Compile Include="CassiniDev\Common.cs" />
     <Compile Include="CassiniDev\Connection.cs" />
@@ -70,8 +76,6 @@
     <Compile Include="CassiniDev\RequestEventArgs.cs" />
     <Compile Include="CassiniDev\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\ProductInfo.cs" />
-    <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCeption.Core\NCeption.Core.csproj">

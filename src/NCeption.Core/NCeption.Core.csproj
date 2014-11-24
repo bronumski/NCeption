@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Configuration\ConfigurationExtensions.cs" />
     <Compile Include="INCeptionConfiguration.cs" />
     <Compile Include="InvalidStartableServiceTypeException.cs" />
@@ -64,8 +70,6 @@
     <Compile Include="NCeptionGlobalSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Net\TcpPort.cs" />
-    <Compile Include="Properties\ProductInfo.cs" />
-    <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="Safely.cs" />
     <Compile Include="ServiceModel\MockServiceHost.cs" />
     <Compile Include="ServiceModel\MockServiceHostFactory.cs" />
