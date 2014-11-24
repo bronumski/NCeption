@@ -6,9 +6,9 @@
   
 	<PropertyGroup>
 		<SolutionFileName>NCeption.sln</SolutionFileName>
-		<Version-Major>0</Version-Major>
+		<Version-Major>1</Version-Major>
 		<Version-Minor>0</Version-Minor>
-		<Version-Macro>0</Version-Macro>
+		<Version-Macro>12</Version-Macro>
 	</PropertyGroup>
   
 </Project>
