@@ -1,12 +1,23 @@
-﻿namespace NCeption.Mocking
+﻿using System;
+
+namespace NCeption.Mocking
 {
     public static class MockProvider
     {
-        public static IMockProvider mockProvider = new NSubstituteMockProvider();
+        private static IMockProvider MockProviderFactory;
 
         public static TMock CreateMock<TMock>() where TMock : class
         {
-            return mockProvider.Mock<TMock>();
+            if (MockProviderFactory == null)
+            {
+                throw new Exception("Mock provider has not been set yet.");
+            }
+            return MockProviderFactory.Mock<TMock>();
+        }
+
+        public static void Initialize(IMockProvider mockProvider)
+        {
+            MockProviderFactory = mockProvider;
         }
     }
 }

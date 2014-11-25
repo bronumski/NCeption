@@ -1,13 +1,13 @@
 ﻿using System;
 using System.ServiceModel;
 using FluentAssertions;
+using NCeption.Mocking;
 using NCeption.Net;
 using NSubstitute;
 using NUnit.Framework;
 
 namespace NCeption.ServiceModel
 {
-    [TestFixture]
     class When_getting_mocked_service_host
     {
         private MockServiceHost<IFooService> mockServiceHost;
@@ -17,6 +17,8 @@ namespace NCeption.ServiceModel
         [SetUp]
         public void SetUp()
         {
+            MockProvider.Initialize(new SimpleMockProvider(type => Substitute.For(new[] { type }, null)));
+
             baseAddress = new Uri("http://localhost:" + TcpPort.GetNextFreePort());
 
             mockServiceHost = MockServiceHostFactory.GenerateMockServiceHost<IFooService>(baseAddress, "Foo");
@@ -63,11 +65,13 @@ namespace NCeption.ServiceModel
         [TearDown]
         public void TearDown()
         {
-            channelFactory.Close();
+            Safely.Call(channelFactory, cf => cf.Close());
             
-            ((IDisposable)channelFactory).Dispose();
+            Safely.Dispose(channelFactory);
 
-            mockServiceHost.Close();
+            Safely.Call(mockServiceHost, host => host.Close());
+
+            MockProvider.Initialize(null);
         }
     }
 

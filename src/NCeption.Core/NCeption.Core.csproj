@@ -39,9 +39,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="NSubstitute">
-      <HintPath>..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -65,7 +62,7 @@
     <Compile Include="IStartableService.cs" />
     <Compile Include="Mocking\IMockProvider.cs" />
     <Compile Include="Mocking\MockProvider.cs" />
-    <Compile Include="Mocking\NSubstituteMockProvider.cs" />
+    <Compile Include="Mocking\SimpleMockProvider.cs" />
     <Compile Include="NCeptionConfiguration.cs" />
     <Compile Include="NCeptionGlobalSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,9 +78,6 @@
   <ItemGroup>
     <None Include="NCeption.Core.nuspec" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
