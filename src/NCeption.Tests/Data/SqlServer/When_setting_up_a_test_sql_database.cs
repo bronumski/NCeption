@@ -65,7 +65,7 @@ namespace NCeption.Data.SqlServer
     {
         protected override string DatabaseProjectPath
         {
-            get { return @"..\..\..\TestProjects\DatabaseTestProject\DatabaseTestProject\DatabaseTestProject.sqlproj"; }
+            get { return @"..\..\..\TestProjects\DatabaseTestProject\DatabaseTestProject.sqlproj"; }
         }
     }
 }
