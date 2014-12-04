@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace NCeption.Web.CassiniDevHosting
 {
-    [Category("WebTests")]
+    [WebTestCategory]
     [RequireServices(typeof(Mvc4TestProject))]
     class When_starting_an_aspnet_web_project : IRequireHttpClient<When_starting_an_aspnet_web_project.Mvc4TestProject>
     {

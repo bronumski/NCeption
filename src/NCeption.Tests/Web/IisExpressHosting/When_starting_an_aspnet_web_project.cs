@@ -2,11 +2,12 @@
 using System.Net.Http;
 using FluentAssertions;
 using NCeption.NUnit;
+using NCeption.Web.CassiniDevHosting;
 using NUnit.Framework;
 
 namespace NCeption.Web.IisExpressHosting
 {
-    [Category("WebTests")][Category("WebTests")]
+    [WebTestCategory]
     [RequireServices(typeof(Mvc4TestProject))]
     class When_starting_an_aspnet_web_project : IRequireHttpClient<When_starting_an_aspnet_web_project.Mvc4TestProject>
     {

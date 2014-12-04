@@ -101,7 +101,9 @@
   <ItemGroup>
     <Compile Include="Configuration\ConfigurationExtensionsFixtures\When_updating_app_settings.cs" />
     <Compile Include="Data\DatabaseManagerFixtures\When_deploying_databases.cs" />
+    <Compile Include="Data\DatabaseTestCategoryAttribute.cs" />
     <Compile Include="Data\SqlServer\When_setting_up_a_test_sql_database.cs" />
+    <Compile Include="Web\WebTestCategoryAttribute.cs" />
     <Compile Include="Web\CassiniDevHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Web\IisExpressHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Nancy\When_starting_nancy_module.cs" />

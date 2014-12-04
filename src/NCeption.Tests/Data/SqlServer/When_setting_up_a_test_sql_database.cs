@@ -11,6 +11,7 @@ using NUnit.Framework;
 
 namespace NCeption.Data.SqlServer
 {
+    [DatabaseTestCategory]
     class When_setting_up_a_test_sql_database
     {
         private TestSqlServerDatabase sqlServerDeploy;
