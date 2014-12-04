@@ -57,6 +57,9 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Configuration\ConfigurationExtensions.cs" />
+    <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\DeployedDatabaseNotFoundException.cs" />
+    <Compile Include="Data\IDatabaseDeployer.cs" />
     <Compile Include="INCeptionConfiguration.cs" />
     <Compile Include="InvalidStartableServiceTypeException.cs" />
     <Compile Include="IStartableService.cs" />

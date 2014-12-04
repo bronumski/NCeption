@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.IisExpress", "NCep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Owin", "NCeption.Owin\NCeption.Owin.csproj", "{F497D491-2D45-45D4-AB6F-B186DC27E271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.SqlServer", "NCeption.SqlServer\NCeption.SqlServer.csproj", "{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,10 @@ Global
 		{F497D491-2D45-45D4-AB6F-B186DC27E271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F497D491-2D45-45D4-AB6F-B186DC27E271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F497D491-2D45-45D4-AB6F-B186DC27E271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

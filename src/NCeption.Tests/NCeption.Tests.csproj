@@ -49,6 +49,18 @@
     <Reference Include="Microsoft.Owin.Host.HttpListener">
       <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.0.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>
     </Reference>
@@ -88,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConfigurationExtensionsFixtures\When_updating_app_settings.cs" />
+    <Compile Include="Data\DatabaseManagerFixtures\When_deploying_databases.cs" />
+    <Compile Include="Data\SqlServer\When_setting_up_a_test_sql_database.cs" />
     <Compile Include="Web\CassiniDevHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Web\IisExpressHosting\When_starting_an_aspnet_web_project.cs" />
     <Compile Include="Nancy\When_starting_nancy_module.cs" />
@@ -142,6 +156,10 @@
     <ProjectReference Include="..\NCeption.Owin\NCeption.Owin.csproj">
       <Project>{F497D491-2D45-45D4-AB6F-B186DC27E271}</Project>
       <Name>NCeption.Owin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCeption.SqlServer\NCeption.SqlServer.csproj">
+      <Project>{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}</Project>
+      <Name>NCeption.SqlServer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

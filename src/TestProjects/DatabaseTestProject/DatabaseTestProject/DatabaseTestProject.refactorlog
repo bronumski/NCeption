@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="970baecb-6f9b-4ed2-8b8f-e65c1f68423a" ChangeDateTime="12/03/2014 21:47:00">
+    <Property Name="ElementName" Value="[dbo].[Wibble].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Wibble]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Wobble" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f02f144d-2b3c-4964-ae05-7668ba75af5b" ChangeDateTime="12/03/2014 22:09:51">
+    <Property Name="ElementName" Value="[dbo].[Wibble].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Wibble]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Wobble" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a4c17e88-5a57-40e8-86ce-e78fa31fb4f3" ChangeDateTime="12/03/2014 22:20:42">
+    <Property Name="ElementName" Value="[dbo].[Wibble].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Wibble]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Wobble" />
+  </Operation>
+</Operations>

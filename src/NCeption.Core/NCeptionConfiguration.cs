@@ -1,32 +1,17 @@
-﻿using System.Collections.Specialized;
-using System.Configuration;
-using System.Linq;
+﻿using System;
 
 namespace NCeption
 {
     public class NCeptionConfiguration : INCeptionConfiguration
     {
-        private readonly NameValueCollection nameValueCollection;
+        private static readonly string testCorrelationId = Guid.NewGuid().ToString("N");
+        private const string testSuiteName = "TestSuite";
 
-        internal NCeptionConfiguration()
+        static NCeptionConfiguration()
         {
-            nameValueCollection = ConfigurationManager.AppSettings;
         }
 
-        public string LoggingFolder
-        {
-            get
-            {
-                return nameValueCollection.AllKeys.Contains("LoggingFolder") ? nameValueCollection["LoggingFolder"] : "NCeptionLogs";
-            }
-        }
-
-        public string TempHostingFolder
-        {
-            get
-            {
-                return nameValueCollection.AllKeys.Contains("TempHostingFolder") ? nameValueCollection["TempHostingFolder"] : "TempHosting";
-            }
-        }
+        public string TestCorrelationId { get { return testCorrelationId; } }
+        public string TestSuiteName { get { return testSuiteName; } }
     }
 }

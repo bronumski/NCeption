@@ -2,7 +2,7 @@
 {
     public interface INCeptionConfiguration
     {
-        string LoggingFolder { get; }
-        string TempHostingFolder { get; }
+        string TestCorrelationId { get; }
+        string TestSuiteName { get; }
     }
 }
