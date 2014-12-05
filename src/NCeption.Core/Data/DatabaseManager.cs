@@ -7,7 +7,12 @@ namespace NCeption.Data
     public class DatabaseManager
     {
         private static readonly IDictionary<Type, IDatabaseDeployer> Databases = new Dictionary<Type, IDatabaseDeployer>();
-        private DatabaseManager() { }
+        private readonly INCeptionConfiguration configuration;
+
+        private DatabaseManager()
+        {
+            configuration = new NCeptionConfiguration();
+        }
 
         static DatabaseManager()
         {
@@ -28,7 +33,9 @@ namespace NCeption.Data
                 return;
             }
 
-            databaseDeployer.Deploy(new NCeptionConfiguration());
+            Safely.Call(databaseDeployer, x => x.DeleteOrphanedDataStores(configuration));
+            
+            databaseDeployer.Deploy(configuration);
 
             Databases.Add(type, databaseDeployer);
 

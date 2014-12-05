@@ -6,12 +6,10 @@ namespace NCeption
     {
         private static readonly string testCorrelationId = Guid.NewGuid().ToString("N");
         private const string testSuiteName = "TestSuite";
-
-        static NCeptionConfiguration()
-        {
-        }
+        private static readonly TimeSpan orphanStaleness = TimeSpan.FromDays(1);
 
         public string TestCorrelationId { get { return testCorrelationId; } }
         public string TestSuiteName { get { return testSuiteName; } }
+        public TimeSpan OrphanStaleness { get { return orphanStaleness; } }
     }
 }

@@ -26,6 +26,18 @@ namespace NCeption.Data.DatabaseManagerFixtures
         }
 
         [Test]
+        public void Should_delete_orphaned_data_stores_only_once()
+        {
+            var databaseThing = Substitute.For<IDatabaseDeployer>();
+
+            DatabaseManager.Current.Deploy(databaseThing);
+
+            DatabaseManager.Current.Deploy(databaseThing);
+
+            databaseThing.Received(1).DeleteOrphanedDataStores(Arg.Any<INCeptionConfiguration>());
+        }
+
+        [Test]
         public void Should_delete_database()
         {
             var databaseThing = new Foo();
@@ -90,6 +102,11 @@ namespace NCeption.Data.DatabaseManagerFixtures
             {
                 Deleted = true;
             }
+
+            public void DeleteOrphanedDataStores(INCeptionConfiguration configuration)
+            {
+                
+            }
         }
 
         private class DatabaseDeleteException : IDatabaseDeployer {
@@ -101,6 +118,11 @@ namespace NCeption.Data.DatabaseManagerFixtures
             public void Delete()
             {
                 throw new Exception();
+            }
+
+            public void DeleteOrphanedDataStores(INCeptionConfiguration configuration)
+            {
+                
             }
         }
     }

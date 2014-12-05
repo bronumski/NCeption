@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Execution;
 using Microsoft.Build.Logging;
@@ -51,7 +53,7 @@ namespace NCeption.SqlServer
         {
             var connectionStringBuilder = new SqlConnectionStringBuilder
             {
-                DataSource = "LocalHost",
+                DataSource = DataSource,
                 IntegratedSecurity = true,
                 Pooling = false
             };
@@ -61,11 +63,24 @@ namespace NCeption.SqlServer
             return connectionStringBuilder;
         }
 
+        protected virtual string DataSource
+        {
+            get { return "LocalHost"; }
+        }
+
         public void Delete()
         {
             var server = new Server(new ServerConnection(CreateConnection()));
 
             server.KillDatabase(databaseName);
+        }
+
+        public void DeleteOrphanedDataStores(INCeptionConfiguration configuration)
+        {
+            var server = new Server(new ServerConnection(CreateConnection()));
+
+            Parallel.ForEach(server.Databases.Cast<Database>().Where(x => x.Name.StartsWith(configuration.TestSuiteName) && x.CreateDate > DateTime.Now - configuration.OrphanStaleness),
+                database => server.KillDatabase(database.Name));
         }
 
         protected abstract string DatabaseProjectPath { get; }
