@@ -1,7 +1,5 @@
 version: 1.1.0.{build}
-
 skip_tags: true
-
 assembly_info:
 	patch: true
 	file: VersionInfo.cs
