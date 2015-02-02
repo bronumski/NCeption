@@ -4,7 +4,7 @@ skip_tags: true
 
 assembly_info:
   patch: true
-  file: VersionInfo.cs
+  file: 'src\VersionInfo.cs'
   assembly_version: '1.1.0.0'
   assembly_file_version: '{version}'
   assembly_informational_version: '{commitId}'
