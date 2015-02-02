@@ -5,6 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{61854809-5257-4A96-891D-738BDD4A6876}"
 	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
 		..\build\Build.proj = ..\build\Build.proj
 		..\build\Build.targets = ..\build\Build.targets
 		..\build\packages.config = ..\build\packages.config
