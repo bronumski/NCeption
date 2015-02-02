@@ -13,7 +13,7 @@ configuration: Release
 
 build:
   parallel: true
-  project: src\NCeption.sln
+  project: build\RestoreAndBuild.proj
 
 test:
   categories:

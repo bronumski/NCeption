@@ -2,13 +2,12 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="BuildAll">
 
 	<Import Project="$(MSBuildProjectDirectory)\Build.targets"/>
-  <Import Project="$(SourceFolder)\.nuget\nuget.targets" />
   
 	<PropertyGroup>
 		<SolutionFileName>NCeption.sln</SolutionFileName>
 		<Version-Major>1</Version-Major>
-		<Version-Minor>0</Version-Minor>
-		<Version-Macro>12</Version-Macro>
+		<Version-Minor>1</Version-Minor>
+		<Version-Macro>0</Version-Macro>
 	</PropertyGroup>
   
 </Project>

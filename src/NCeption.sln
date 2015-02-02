@@ -33,8 +33,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Tests", "NCeption.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{61EF21C6-6FD2-4EC3-BF02-07146DAE0B4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4TestProject", "TestProjects\Mvc4TestProject\Mvc4TestProject.csproj", "{25009C7A-6A57-492E-946C-582F586FC5A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.CassiniDev", "NCeption.CassiniDev\NCeption.CassiniDev.csproj", "{6A9BD6FC-904E-4581-8D95-C5E786B9700C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.NUnit", "NCeption.NUnit\NCeption.NUnit.csproj", "{810FB899-4222-45B5-B397-B898D677CD45}"
@@ -46,6 +44,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.Owin", "NCeption.Owin\NCeption.Owin.csproj", "{F497D491-2D45-45D4-AB6F-B186DC27E271}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCeption.SqlServer", "NCeption.SqlServer\NCeption.SqlServer.csproj", "{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4TestProject", "TestProjects\Mvc4TestProject\Mvc4TestProject.csproj", "{E85D3777-2218-477C-B069-347C010F7228}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +61,6 @@ Global
 		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7210C387-C1B5-4553-9463-F390A66CEEDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25009C7A-6A57-492E-946C-582F586FC5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25009C7A-6A57-492E-946C-582F586FC5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25009C7A-6A57-492E-946C-582F586FC5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25009C7A-6A57-492E-946C-582F586FC5A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A9BD6FC-904E-4581-8D95-C5E786B9700C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A9BD6FC-904E-4581-8D95-C5E786B9700C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A9BD6FC-904E-4581-8D95-C5E786B9700C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,12 +85,16 @@ Global
 		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{822068EC-D900-45BB-ABAF-F0C1E8E8B5B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E85D3777-2218-477C-B069-347C010F7228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85D3777-2218-477C-B069-347C010F7228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85D3777-2218-477C-B069-347C010F7228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85D3777-2218-477C-B069-347C010F7228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7210C387-C1B5-4553-9463-F390A66CEEDD} = {D01C88EB-EF98-4ED3-96CA-FD552DE956BB}
-		{25009C7A-6A57-492E-946C-582F586FC5A2} = {61EF21C6-6FD2-4EC3-BF02-07146DAE0B4C}
+		{E85D3777-2218-477C-B069-347C010F7228} = {61EF21C6-6FD2-4EC3-BF02-07146DAE0B4C}
 	EndGlobalSection
 EndGlobal

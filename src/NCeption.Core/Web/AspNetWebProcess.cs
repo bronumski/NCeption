@@ -53,7 +53,8 @@ namespace NCeption.Web
                 var globalProperty = new Dictionary<string, string>
                 {
                     {"WebProjectOutputDir", hostingFolder.FullName},
-                    {"OutDir", Path.Combine(hostingFolder.FullName, "bin")}
+                    {"OutDir", Path.Combine(hostingFolder.FullName, "bin")},
+                    {"Configuration", "Release"}
                 };
 
                 var buildParameters = new BuildParameters(projectCollection)
@@ -62,7 +63,7 @@ namespace NCeption.Web
                     DefaultToolsVersion = "4.0"
                 };
 
-                var buildRequestData = new BuildRequestData(WebProjectPath, globalProperty, "4.0", new []{"ResolveReferences", "_CopyWebApplication"}, null);
+                var buildRequestData = new BuildRequestData(WebProjectPath, globalProperty, "4.0", new []{"Build", "ResolveReferences", "_CopyWebApplication"}, null);
 
                 var buildResult = BuildManager.DefaultBuildManager.Build(buildParameters, buildRequestData);
 

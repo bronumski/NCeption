@@ -2,7 +2,6 @@
 using System.Net.Http;
 using FluentAssertions;
 using NCeption.NUnit;
-using NCeption.Web.CassiniDevHosting;
 using NUnit.Framework;
 
 namespace NCeption.Web.IisExpressHosting
@@ -15,7 +14,7 @@ namespace NCeption.Web.IisExpressHosting
         [Repeat(10)]
         public void Should_deploy_website_and_run_it()
         {
-            HttpClient.GetAsync("/Home/Index").Result.StatusCode.Should().Be(HttpStatusCode.OK);
+            HttpClient.GetAsync("index.html").Result.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
         public HttpClient HttpClient { set; private get; }
