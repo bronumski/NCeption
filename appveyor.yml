@@ -4,15 +4,16 @@ skip_tags: true
 
 assembly_info:
   patch: true
-  file: src\VersionInfo.cs
-  assembly_version: "1.1.0.0"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{commitId}"
+  file: VersionInfo.cs
+  assembly_version: '1.1.0.0'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{commitId}'
+
+configuration: Release
 
 build:
   parallel: true
   project: src\NCeption.sln
-  publish_nuget: true
 
 test:
   categories:
