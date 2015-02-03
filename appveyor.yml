@@ -11,6 +11,9 @@ assembly_info:
 
 configuration: Release
 
+before_build:
+  - nuget restore
+
 build:
   parallel: true
   project: build\RestoreAndBuild.proj
