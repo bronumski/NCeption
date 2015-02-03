@@ -12,7 +12,7 @@ assembly_info:
 configuration: Release
 
 environment:
-	build_number: {build}
+  build_number: {build}
 
 before_build:
   - nuget restore "src\NCeption.sln"
