@@ -11,9 +11,6 @@ assembly_info:
 
 configuration: Release
 
-environment:
-  build_number: "{build}"
-
 before_build:
   - nuget restore "src\NCeption.sln"
   - nuget install "build\packages.config" -ExcludeVersion -OutPutDirectory "tools\packages"
