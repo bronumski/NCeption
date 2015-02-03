@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{61854809
 		..\build\Build.proj = ..\build\Build.proj
 		..\build\Build.targets = ..\build\Build.targets
 		..\build\packages.config = ..\build\packages.config
-		..\build\RestoreAndBuild.proj = ..\build\RestoreAndBuild.proj
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{93E15A05-F2CF-496E-96E1-8A1ACE27B8E8}"
