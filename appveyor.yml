@@ -13,7 +13,7 @@ configuration: Release
 
 before_build:
   - nuget restore "src\NCeption.sln"
-  - nuget restore "build\packages.config" -ExcludeVersion -OutPutDirectory "tools\packages"
+  - nuget install "build\packages.config" -ExcludeVersion -OutPutDirectory "tools\packages"
 
 build:
   parallel: true
