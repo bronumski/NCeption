@@ -9,5 +9,17 @@
 		<Version-Minor>1</Version-Minor>
 		<Version-Macro>0</Version-Macro>
 	</PropertyGroup>
+
+  <Target Name="Package" AfterTargets="Build">
+    <ItemGroup>
+      <Nuspec Include="..\src\NCep*\*.nuspec" />
+    </ItemGroup>
+    
+    <RemoveDir Directories="$(AssemblyOutputPath)" />
+    
+    <MakeDir Directories="$(AssemblyOutputPath)" />
+    
+    <Exec Command="&quot;$(ToolsFolder)\nuget\nuget.exe&quot; pack &quot;%(Nuspec.RootDir)%(Nuspec.Directory)%(Nuspec.Filename).csproj&quot; -OutputDirectory &quot;$(AssemblyOutputPath)&quot; -Version $(Version-File) -Prop Configuration=Release -IncludeReferencedProjects -Verbosity detailed"  />
+  </Target>
   
 </Project>
